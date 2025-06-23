@@ -1,0 +1,17 @@
+{
+  "name": "dopamine-threads",
+  "version": "1.0.0",
+  "description": "E-commerce site for Dopamine Threads",
+  "main": "index.js",
+  "scripts": {
+    "dev": "browser-sync start --server --files \"**/*.html, css/*.css, js/**/*.js\"",
+    "build": "echo 'Build process would run here'"
+  },
+  "keywords": ["ecommerce", "fashion", "streetwear"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.10"
+  },
+  "type": "module"
+}

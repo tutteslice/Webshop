@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Dopamine Threads</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation will be loaded here by nav.js -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Shop</h1>
+            <p class="tagline">Discover our unique collection of ravewear and accessories</p>
+            <div class="about-image">
+                <img src="images/pollen.png" alt="Rave Culture" class="about-img">
+        </div>
+    </header>
+
+    <!-- Shop Content -->
+    <main class="shop-main">
+        <div class="shop-container">
+            <!-- Sidebar -->
+            <aside class="shop-sidebar">
+                <div class="filter-section">
+                    <h3>Categories</h3>
+                    <ul class="category-list" id="category-list">
+                        <li><a href="#" class="active" data-category="all">All Products</a></li>
+                        <li><a href="#" data-category="designs">Dopamine Designs</a></li>
+                        <li><a href="#" data-category="prints">Prints</a></li>
+                        <li><a href="#" data-category="second-hand">Second-Hand Gems</a></li>
+                    </ul>
+                </div>
+                
+                <div class="filter-section">
+                    <h3>Price Range</h3>
+                    <div class="price-range">
+                        <input type="range" id="price-range" min="0" max="100" value="100">
+                        <div class="price-range-values">
+                            <span>€0</span>
+                            <span id="price-max">€100</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="filter-section">
+                    <h3>Size</h3>
+                    <div class="size-options">
+                        <button class="size-option" data-size="XS">XS</button>
+                        <button class="size-option" data-size="S">S</button>
+                        <button class="size-option" data-size="M">M</button>
+                        <button class="size-option" data-size="L">L</button>
+                        <button class="size-option" data-size="XL">XL</button>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary apply-filters">Apply Filters</button>
+                <button class="btn btn-outline reset-filters">Reset All</button>
+            </aside>
+
+            <!-- Products Grid -->
+            <div class="shop-content">
+                <div class="shop-toolbar">
+                    <div class="sorting-options">
+                        <label for="sort">Sort by:</label>
+                        <select id="sort">
+                            <option value="featured">Featured</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="newest">Newest</option>
+                        </select>
+                    </div>
+                    <div class="view-options">
+                        <button class="view-option active" data-view="grid"><i class="fas fa-th"></i></button>
+                        <button class="view-option" data-view="list"><i class="fas fa-list"></i></button>
+                    </div>
+                </div>
+                
+                <div class="products-grid" id="products-grid">
+                    <!-- Products will be loaded here by JavaScript -->
+                </div>
+                
+                <div class="pagination">
+                    <button class="btn btn-outline" id="prev-page">Previous</button>
+                    <div class="page-numbers" id="page-numbers">
+                        <!-- Page numbers will be added here by JavaScript -->
+                    </div>
+                    <button class="btn btn-outline" id="next-page">Next</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2>Join the Movement</h2>
+            <p>Subscribe to get updates on new drops and exclusive offers.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo/logo.png" alt="Dopamine Threads">
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Shop</h3>
+                    <a href="shop.html">All Products</a>
+                    <a href="shop.html?category=prints">Prints</a>
+                    <a href="shop.html?category=designs">Dopamine Designs</a>
+                    <a href="shop.html?category=second-hand">Second-Hand Gems</a>
+                </div>
+                <div class="footer-column">
+                    <h3>About</h3>
+                    <a href="about.html">Our Story</a>
+                    <a href="about.html#mission">Mission</a>
+                    <a href="about.html#sustainability">Sustainability</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Help</h3>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="faq.html">FAQs</a>
+                    <a href="shipping.html">Shipping & Returns</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/dopamine.threads" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Dopamine Threads. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/nav.js"></script>
+</body>
+</html>
