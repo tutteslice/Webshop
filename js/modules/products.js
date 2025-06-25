@@ -4,21 +4,57 @@
 const products = [
     {
         id: 1,
-        name: 'Stealth Pocket Boxers',
-        price: 14.00,
+        name: 'Groin Pocket Boxer Shorts',
+        price: 24.99,
         category: 'designs',
-        image: 'https://via.placeholder.com/300x400/333333/666666?text=Stealth+Boxers',
-        description: 'Comfortable boxer briefs with a hidden pocket to keep your essentials secure during festivals and raves.'
+        image: 'images/boxers.png',
+        description: 'Premium boxer shorts with a revolutionary hidden zippered pocket strategically placed in the groin area. Designed for maximum discretion and security - perfect for festivals, travel, or any situation where you need to keep essentials completely hidden. Made from soft, breathable bamboo blend fabric.',
+        sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+        colors: ['Black', 'Navy', 'Charcoal'],
+        features: ['Hidden zippered groin pocket', 'Bamboo blend fabric', 'Moisture-wicking', 'Anti-chafe seams', 'Elastic waistband']
     },
     {
         id: 2,
-        name: 'Zippered Pocket Boxers',
+        name: 'Stealth String Panties',
         price: 19.99,
         category: 'designs',
-        image: 'images/boxers.png',
-        description: 'Premium boxer shorts featuring a discreet zippered pocket. Perfect for keeping your valuables safe while on the move. Made from soft, breathable fabric for all-day comfort.',
-        sizes: ['S', 'M', 'L', 'XL'],
-        colors: ['Black', 'Navy', 'Gray']
+        image: 'images/bikini.png',
+        description: 'Ultra-discreet string panties featuring a hidden zippered pocket in the groin area. Minimal design with maximum functionality. Perfect for raves, festivals, or any time you need to keep small essentials completely concealed. Soft, stretchy microfiber construction.',
+        sizes: ['XS', 'S', 'M', 'L', 'XL'],
+        colors: ['Black', 'Nude', 'Red'],
+        features: ['Micro zippered groin pocket', 'String side design', 'Seamless construction', 'Quick-dry fabric', 'Ultra-thin profile']
+    },
+    {
+        id: 3,
+        name: 'Pollenallergi Print',
+        price: 15.99,
+        category: 'prints',
+        image: 'images/pollen.png',
+        description: 'Unique "Pollenallergi" artistic print available for custom application on various items. Choose your preferred item and we\'ll have it professionally printed and shipped directly to you by our printing partner. High-quality, durable printing on premium materials.',
+        customizable: true,
+        printOptions: [
+            { item: 'T-Shirt', basePrice: 15.99 },
+            { item: 'Hoodie', basePrice: 29.99 },
+            { item: 'Tote Bag', basePrice: 12.99 },
+            { item: 'Baseball Cap', basePrice: 18.99 },
+            { item: 'Beanie', basePrice: 16.99 },
+            { item: 'Tank Top', basePrice: 14.99 }
+        ],
+        sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
+        note: 'Printed and shipped by third-party partner. Allow 7-14 days for production and shipping.'
+    },
+    {
+        id: 4,
+        name: 'Vintage Adidas Sweatshirt OS Switzerland',
+        price: 89.99,
+        category: 'second-hand',
+        image: 'https://via.placeholder.com/300x400/333333/666666?text=Vintage+Adidas',
+        description: 'Authentic vintage Adidas sweatshirt from OS (Original Series) Switzerland collection. Rare find in excellent condition featuring the classic three stripes and retro styling. Perfect for collectors and vintage enthusiasts.',
+        size: 'L',
+        condition: 'Excellent',
+        era: '1990s',
+        features: ['Authentic vintage piece', 'OS Switzerland collection', 'Classic three stripes', 'Retro styling', 'Rare collector item'],
+        note: 'One-of-a-kind vintage item. Size and condition as described. All sales final on vintage items.'
     }
 ];
 

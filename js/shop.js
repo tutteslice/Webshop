@@ -7,7 +7,10 @@ const products = [
         name: 'Stealth Pocket Boxers',
         price: 14.00,
         category: 'designs',
-        image: 'https://via.placeholder.com/300x400/333333/666666?text=Stealth+Boxers',
+        images: {
+            main: 'images/products/product-001-stealth-boxers-main.png',
+            alt: []
+        },
         description: 'Comfortable boxer briefs with a hidden pocket for your essentials.',
         sizes: ['S', 'M', 'L', 'XL'],
         tags: ['new', 'bestseller']
@@ -17,7 +20,10 @@ const products = [
         name: 'Vintage Rave Pants',
         price: 45.00,
         category: 'second-hand',
-        image: 'https://via.placeholder.com/300x400/333333/666666?text=Vintage+Pants',
+        images: {
+            main: 'images/products/product-002-vintage-pants-main.png',
+            alt: []
+        },
         description: 'Authentic 90s rave pants with vibrant patterns.',
         sizes: ['M', 'L'],
         tags: []
@@ -27,7 +33,10 @@ const products = [
         name: 'Neon Dreams Art Print',
         price: 24.99,
         category: 'prints',
-        image: 'https://via.placeholder.com/300x400/333333/666666?text=Neon+Dreams',
+        images: {
+            main: 'images/products/product-003-neon-print-main.png',
+            alt: []
+        },
         description: 'Vibrant art print for your space.',
         sizes: [],
         tags: ['new']
@@ -37,7 +46,10 @@ const products = [
         name: 'Hidden Pocket Panties',
         price: 14.00,
         category: 'designs',
-        image: 'https://via.placeholder.com/300x400/333333/666666?text=Stealth+Panties',
+        images: {
+            main: 'images/products/product-004-pocket-panties-main.png',
+            alt: []
+        },
         description: 'Comfortable panties with a hidden pocket.',
         sizes: ['XS', 'S', 'M', 'L'],
         tags: ['bestseller']
@@ -47,7 +59,10 @@ const products = [
         name: 'Festival Poster Collection',
         price: 39.99,
         category: 'prints',
-        image: 'https://via.placeholder.com/300x400/333333/666666?text=Festival+Posters',
+        images: {
+            main: 'images/products/product-005-festival-posters-main.png',
+            alt: []
+        },
         description: 'Set of 3 high-quality festival posters.',
         sizes: [],
         tags: []
@@ -57,22 +72,39 @@ const products = [
         name: '90s Rave Jacket',
         price: 65.00,
         category: 'second-hand',
-        image: 'https://via.placeholder.com/300x400/333333/666666?text=90s+Jacket',
+        images: {
+            main: 'images/products/product-006-rave-jacket-main.png',
+            alt: []
+        },
         description: 'Vintage 90s rave jacket with multiple pockets.',
         sizes: ['S', 'M', 'L'],
         tags: []
+    },
+    {
+        id: 7,
+        name: 'Hidden Pocket Bra',
+        price: 18.00,
+        category: 'designs',
+        images: {
+            main: 'images/products/product-007-pocket-bra-main.png',
+            alt: ['images/products/product-007-pocket-bra-back.png']
+        },
+        description: 'Comfortable bra with a hidden pocket for your essentials.',
+        sizes: ['XS', 'S', 'M', 'L', 'XL'],
+        tags: ['new']
     }
 ];
 
 // DOM Elements
-const productsContainer = document.getElementById('products-container');
+const productsContainer = document.getElementById('products-grid');
 const categoryLinks = document.querySelectorAll('.category-list a');
-const sortSelect = document.getElementById('sort-by');
+const sortSelect = document.getElementById('sort');
 const prevBtn = document.getElementById('prev-page');
 const nextBtn = document.getElementById('next-page');
 const pageNumbers = document.getElementById('page-numbers');
-const showingCount = document.getElementById('showing-count');
-const totalCount = document.getElementById('total-count');
+// Count elements don't exist in current HTML
+// const showingCount = document.getElementById('showing-count');
+// const totalCount = document.getElementById('total-count');
 
 // Pagination
 let currentPage = 1;
@@ -167,16 +199,16 @@ function renderProducts() {
     const filteredProducts = getFilteredProducts();
     const sortedProducts = sortProducts(filteredProducts);
     
-    // Update counts
-    totalCount.textContent = filteredProducts.length;
+    // Update counts (elements don't exist in current HTML)
+    // totalCount.textContent = filteredProducts.length;
     
     // Calculate pagination
     const totalPages = Math.ceil(sortedProducts.length / productsPerPage);
     const startIndex = (currentPage - 1) * productsPerPage;
     const paginatedProducts = sortedProducts.slice(startIndex, startIndex + productsPerPage);
     
-    // Update showing count
-    showingCount.textContent = paginatedProducts.length;
+    // Update showing count (element doesn't exist in current HTML)
+    // showingCount.textContent = paginatedProducts.length;
     
     // Clear container
     productsContainer.innerHTML = '';
@@ -217,7 +249,7 @@ function createProductElement(product) {
     productElement.innerHTML = `
         <div class="product-image">
             ${badges.join('')}
-            <img src="${product.image}" alt="${product.name}">
+            <img src="${product.images.main}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/300x400/333333/666666?text=${encodeURIComponent(product.name)}'">
             <div class="product-actions">
                 <button class="btn btn-primary btn-add-to-cart" data-product-id="${product.id}">
                     Add to Cart
@@ -344,7 +376,7 @@ function addToCart(productId) {
             id: product.id,
             name: product.name,
             price: product.price,
-            image: product.image,
+            image: product.images.main,
             quantity: 1
         });
     }
